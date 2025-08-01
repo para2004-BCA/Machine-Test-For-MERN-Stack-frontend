@@ -1,12 +1,94 @@
-# React + Vite
+# Agent Distribution App – Frontend
+This is the frontend for the MERN Stack-based Agent Distribution application.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Features
+ Built with React.js
 
-Currently, two official plugins are available:
+ Admin Login using JWT
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ Create and manage agents
 
-## Expanding the ESLint configuration
+ Upload CSV/XLSX files
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+ Auto-distribute data among 5 agents
+
+ Display distributed lists per agent
+
+ Tech Stack
+React.js
+
+Axios (for API calls)
+
+Bootstrap / Tailwind (optional for UI)
+
+React Router
+
+Formik + Yup (for validation)
+
+ Project Structure
+pgsql
+Copy code
+frontend/
+├── public/
+├── src/
+│   ├── components/
+│   │   ├── LoginForm.jsx
+│   │   ├── AgentForm.jsx
+│   │   ├── FileUpload.jsx
+│   │   └── AgentDataTable.jsx
+│   ├── pages/
+│   │   ├── LoginPage.jsx
+│   │   ├── Dashboard.jsx
+│   │   └── NotFound.jsx
+│   ├── services/
+│   │   └── api.js
+│   ├── App.js
+│   └── index.js
+├── .env
+└── package.json
+⚙️ Setup Instructions
+Clone the repository
+
+bash
+Copy code
+git clone https://github.com/your-username/agent-distribution-frontend.git
+cd agent-distribution-frontend
+Install dependencies
+
+bash
+Copy code
+npm install
+Create .env file
+Create a .env file in the root folder and add:
+
+ini
+Copy code
+REACT_APP_API_URL=http://localhost:8080
+Run the app
+
+bash
+Copy code
+npm start
+Open your browser and go to http://localhost:3000
+
+ API Endpoints Used
+POST /login – Authenticate user
+
+POST /agents/create – Add new agent
+
+GET /agents – Get all agents
+
+POST /upload – Upload CSV and distribute
+
+GET /distribution/:agentId – Get distributed data per agent
+ Notes
+Make sure backend is running on port 8080 or update .env.
+
+Must login first to access dashboard and upload pages.
+
+Supports .csv, .xlsx, and .xls formats.
+
+ Support
+For questions or help, contact:
+Email: paramesha0002@gmail.com
+Mobile: +91-8310201677
